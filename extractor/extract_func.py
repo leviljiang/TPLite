@@ -46,6 +46,9 @@ def get_repo(url_file, save_dir, noheader=True):
     os.chdir(clone_path)
 
     for tpl_id, url in zip(df["tpl_id"], df["url"]):
+        save_path = os.path.join(save_dir, f"{tpl_id}.json")
+        if os.path.exists(save_path):
+            continue
         repo_name = url.split('/')[-1].replace(".git", "")
         logging.info("Parsing %s" % repo_name)
         clone_command = "git clone " + url
@@ -103,8 +106,6 @@ def get_repo(url_file, save_dir, noheader=True):
                 print("TODO - for repository with only master")
         except Exception as e:
             logger.fatal('[*] Error: %s' % str(e))
-
-        save_path = os.path.join(save_dir, f"{repo_name}.json")
         with open(save_path, 'w') as fp:
             json.dump(func_dict, fp, indent=1)
     os.chdir(current_path)
