@@ -1,9 +1,10 @@
 # Ground truth dataset
 
 1. **TPL dependency**
-   - [tpl_dep.csv](./tpl_dep.csv) contains the 2,150 tpl dependencies as the dataset in paper
 
-   - continuous updating of the ground truth dataset for subsequent studies
+- [tpl_dep_gt.csv](./tpl_dep_gt.csv) contains the 2,150 tpl dependencies as the dataset in paper
+
+- continuous updating of the ground truth dataset for subsequent studies
 
 
 
