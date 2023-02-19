@@ -307,7 +307,7 @@ def main():
             remove_set.add((tpl_id_s, tpl_id_x))
     recall_relation = recall_relation - remove_set
 
-    save_path = store_path.joinpath("recall_relation.csv")
+    save_path = store_path.joinpath("tpl_dep.csv")
     with open(save_path, "w") as fp:
         fp.write("origin_tpl_uuid,reuse_tpl_uuid\n")
         for tpl_id_s, tpl_id_x in recall_relation:
